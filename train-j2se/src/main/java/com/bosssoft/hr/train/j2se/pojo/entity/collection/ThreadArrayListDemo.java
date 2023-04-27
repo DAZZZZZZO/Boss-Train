@@ -10,7 +10,7 @@ import java.util.List;
  * @class: ThreadArrayListDemo
  * @Description:
  * @Author: Dazo
- * @date: 26/4/2023下午8:19
+ * @date: 26/4/2023
  */
 @Slf4j
 public class ThreadArrayListDemo {
@@ -34,14 +34,15 @@ public class ThreadArrayListDemo {
                 synchronized (list) {
                     while (list.size() == maxSize) {
                         try {
-                            System.out.println("队列已满，等待消费者消费...");
+                            log.info("队列已满，等待消费者消费...");
                             list.wait();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
+                            Thread.currentThread().interrupt();
                         }
                     }
 
-                    System.out.println("生产者生产了数据：" + i);
+                    log.info("生产者生产了数据：" + i);
                     list.add(i++);
                     list.notifyAll();
                 }
@@ -65,15 +66,16 @@ public class ThreadArrayListDemo {
                 synchronized (list) {
                     while (list.isEmpty()) {
                         try {
-                            System.out.println("队列为空，等待生产者生产...");
+                            log.info("队列为空，等待生产者生产...");
                             list.wait();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
+                            Thread.currentThread().interrupt();
                         }
                     }
 
                     int data = list.remove(list.size() - 1);
-                    System.out.println("消费者消费了数据：" + data);
+                    log.info("消费者消费了数据：" + data);
                     list.notifyAll();
                 }
             }
