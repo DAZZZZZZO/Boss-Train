@@ -69,20 +69,19 @@ public class User extends BaseEntity {
         this.name = name;
     }
 
-    public User(Long id, Long tenantId, Long orgId, Long companyId, Long createdBy, String creator, Date createdTime, Long updatedBy, Date updatedTime, String modifier, byte status, Long version, Set<Role> roles, String code, String name, String password, String profilePicture, Date birthday, String tel, String email, String other, String remark, Long departmentId, Long positionId) {
-        super(id, tenantId, orgId, companyId, createdBy, creator, createdTime, updatedBy, updatedTime, modifier, status, version);
+    public User(Long id, Long tenantId, Long orgId, Long companyId, Long createdBy, String creator, Date createdTime, Set<Role> roles, String code, String name, String password, String profilePicture, Date birthday) {
         this.roles = roles;
         this.code = code;
         this.name = name;
         this.password = password;
         this.profilePicture = profilePicture;
         this.birthday = birthday;
-        this.tel = tel;
-        this.email = email;
-        this.other = other;
-        this.remark = remark;
-        this.departmentId = departmentId;
-        this.positionId = positionId;
+        this.departmentId = null;
+        this.positionId = null;
+        this.email = null;
+        this.tel = null;
+        this.other = null;
+        this.remark = null;
     }
 
     public User(int i, String s) {
@@ -108,8 +107,9 @@ public class User extends BaseEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), code, name,id);
+        return Objects.hash(super.hashCode(), code, name,id,roles);
     }
+
 
     @Override
     public String toString() {
