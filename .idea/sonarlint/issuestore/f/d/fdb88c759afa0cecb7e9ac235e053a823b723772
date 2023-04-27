@@ -1,0 +1,22 @@
+
+^	java:S107H"BConstructor has 24 parameters, which is greater than 7 authorized.(´…¹8Ë‚±ğû0
+F
+java:S1068")Remove this unused "roles" private field.(öö¤8Õ‚±ğû0
+N
+java:S1068",Remove this unused "password" private field.(œãë­úÿÿÿÿ8Ö‚±ğû0
+O
+java:S1068""2Remove this unused "profilePicture" private field.(ˆÕà8Ö‚±ğû0
+N
+java:S1068&",Remove this unused "birthday" private field.(¨›ÒÈüÿÿÿÿ8Ö‚±ğû0
+D
+java:S1068*"'Remove this unused "tel" private field.(°¡¥8Ö‚±ğû0
+K
+java:S1068.")Remove this unused "email" private field.(ª«Õìùÿÿÿÿ8Ö‚±ğû0
+K
+java:S10682")Remove this unused "other" private field.(ºÖÎòøÿÿÿÿ8Ö‚±ğû0
+G
+java:S10686"*Remove this unused "remark" private field.(µ»Ûã8Ö‚±ğû0
+R
+java:S1068:"0Remove this unused "departmentId" private field.(Ø›¶œûÿÿÿÿ8Ö‚±ğû0
+P
+java:S1068>".Remove this unused "positionId" private field.(¨„õıÿÿÿÿ8Ö‚±ğû0
